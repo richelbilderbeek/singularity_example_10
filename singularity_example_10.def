@@ -20,6 +20,8 @@ From: ubuntu:18.10
 
     apt-get update
     apt-get install --yes ncbi-blast+ ncbi-entrez-direct
+    apt-get install --yes locales
+    locale-gen en_US.UTF-8
 
 %labels
 
