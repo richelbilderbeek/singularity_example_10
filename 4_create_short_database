@@ -1,0 +1,22 @@
+#!/bin/bash
+# Make a database based on the short proteome
+#
+# Usage, local:
+#
+#    ./3_create_short_database
+#
+# Usage, Peregrine:
+#
+#    sbatch 3_create_short_database
+#
+#
+# Peregrine directives:
+#SBATCH --time=1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks=1
+#SBATCH --mem=1G
+#SBATCH --job-name=3_create_short_database
+#SBATCH --output=3_create_short_database.log
+singularity exec singularity_example_10.sif \
+  makeblastdb -in mycobacterium_short.faa -dbtype prot

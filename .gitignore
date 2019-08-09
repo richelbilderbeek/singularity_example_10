@@ -32,3 +32,6 @@
 *.app
 *.sif
 *.simg
+*.xml
+*.faa
+*.faa.*

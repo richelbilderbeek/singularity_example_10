@@ -3,18 +3,7 @@ From: ubuntu:18.10
 
 %runscript
 
-    echo "Download a mycobacterium proteome"   
-    esearch -db assembly -query '("Mycobacterium"[Organism] OR mycobacterium[All Fields]) AND (latest[filter] AND "complete genome"[filter] AND all[filter] NOT anomalous[filter])' | elink -target nuccore -name assembly_nuccore_refseq | elink -target protein | efetch -db protein -format fasta > mycobacterium.faa 
-
-    echo "Create a shorter version of the mycobacterium proteome"   
-    cat mycobacterium.faa | head -n 10 > mycobacterium_short.faa
-
-    echo "Make a database"
-    makeblastdb -in mycobacterium_short.faa -dbtype prot
-
-    echo "Get similar proteome sequences"
     blastp -version
-    blastp -query mycobacterium_short.faa -db mycobacterium_short.faa -out short_vs_short.xml -outfmt 5
 
 %post
 

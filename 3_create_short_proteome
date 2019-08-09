@@ -1,0 +1,21 @@
+#!/bin/bash
+# Create a shorter version of the mycobacterium proteome
+#
+# Usage, local:
+#
+#    ./2_create_short_proteome
+#
+# Usage, Peregrine:
+#
+#    sbatch 2_create_short_proteome
+#
+#
+# Peregrine directives:
+#SBATCH --time=0:01:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks=1
+#SBATCH --mem=1G
+#SBATCH --job-name=2_create_short_proteome
+#SBATCH --output=2_create_short_proteome.log
+cat mycobacterium.faa | head -n 10 > mycobacterium_short.faa
