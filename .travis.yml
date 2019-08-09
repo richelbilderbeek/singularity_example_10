@@ -1,0 +1,32 @@
+language: generic
+dist: bionic
+cache: packages
+
+install:
+  # Go, from https://tecadmin.net/install-go-on-ubuntu/
+  - wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+  - sudo tar -xf go1.12.7.linux-amd64.tar.gz
+  - sudo mv go /usr/local
+  - export GOROOT=/usr/local/go
+  - export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+  # Check dead links
+  - sudo apt-get install -qq npm
+  - npm config set strict-ssl false
+  - sudo npm install -g markdown-link-check
+  # Singularity
+  - sudo ./install_dependencies
+  - go version
+  - which go
+  - sudo ./install_singularity
+  - singularity --version
+
+script:
+  # Build the container
+  - sudo ./build_container
+  # Run the container
+  - ./singularity_example_4.sif
+  # Check dead links
+  - rm -f *.sif
+  - rm -f *.tar.gz
+  - sudo rm -rf singularity
+  - ./scripts/check_dead_links || true
