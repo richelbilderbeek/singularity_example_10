@@ -20,4 +20,4 @@
 #SBATCH --job-name=1_download_container
 #SBATCH --output=1_download_container.log
 
-singularity pull library://richelbilderbeek/default/singularity_example_10
+singularity pull library://richelbilderbeek/default/singularity_example_10:v1.0 
