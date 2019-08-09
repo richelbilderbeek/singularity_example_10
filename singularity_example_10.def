@@ -4,7 +4,7 @@ From: ubuntu:18.10
 %runscript
 
     blastp -version
-    esearch -db assembly -query '("Mycobacterium"[Organism] OR mycobacterium[All Fields]) AND (latest[filter] AND "complete genome"[filter] AND all[filter] NOT anomalous[filter])' | elink -target nuccore -name assembly_nuccore_refseq | elink -target protein | efetch -db protein -format fasta > mycobacterium.faa
+    blastp -query mycobacterium_short.faa -db mycobacterium_short.faa -out short_vs_short.xml -outfmt 5
 
 %post
 
