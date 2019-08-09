@@ -19,7 +19,7 @@ From: ubuntu:18.10
 %post
 
     apt-get update
-    apt-get install --yes ncbi-blast+
+    apt-get install --yes ncbi-blast+ ncbi-entrez-direct
 
 %labels
 
