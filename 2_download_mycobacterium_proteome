@@ -19,4 +19,4 @@
 #SBATCH --job-name=2_download_mycobacterium_proteome
 #SBATCH --output=2_download_mycobacterium_proteome.log
 
-singularity exec singularity_example_10.sif esearch -db assembly -query '("Mycobacterium"[Organism] OR mycobacterium[All Fields]) AND (latest[filter] AND "complete genome"[filter] AND all[filter] NOT anomalous[filter])' | elink -target nuccore -name assembly_nuccore_refseq | elink -target protein | efetch -db protein -format fasta > mycobacterium.faa
+singularity exec singularity_example_10.sif esearch -db assembly -query '("Mycobacterium"[Organism] OR mycobacterium[All Fields]) AND (latest[filter] AND "complete genome"[filter] AND all[filter] NOT anomalous[filter])' | singularity exec singularity_example_10.sif elink -target nuccore -name assembly_nuccore_refseq | singularity exec singularity_example_10.sif elink -target protein | singularity exec singularity_example_10.sif efetch -db protein -format fasta > mycobacterium.faa
