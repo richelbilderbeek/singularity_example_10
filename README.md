@@ -1,7 +1,7 @@
-# singularity_example_4
+# singularity_example_10
 
 Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
 ---|---
-`master`|[![Build Status](https://travis-ci.org/richelbilderbeek/singularity_example_4.svg?branch=master)](https://travis-ci.org/richelbilderbeek/singularity_example_4)
+`master`|[![Build Status](https://travis-ci.org/richelbilderbeek/singularity_example_10.svg?branch=master)](https://travis-ci.org/richelbilderbeek/singularity_example_10)
 
-Singularity example 4: install NCBI tools
+Singularity example 10: BBBQ
