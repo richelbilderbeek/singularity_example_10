@@ -3,11 +3,11 @@
 #
 # Usage, local:
 #
-#    ./4_create_relatives_short
+#    ./5_create_relatives_short
 #
 # Usage, Peregrine:
 #
-#    sbatch 4_create_relatives_short
+#    sbatch 5_create_relatives_short
 #
 #
 # Peregrine directives:
@@ -16,7 +16,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --mem=1G
-#SBATCH --job-name=4_create_relatives_short
-#SBATCH --output=4_create_relatives_short.log
+#SBATCH --job-name=5_create_relatives_short
+#SBATCH --output=5_create_relatives_short.log
 singularity exec singularity_example_10.sif \
   blastp -query mycobacterium_short.faa -db mycobacterium_short.faa -out short_vs_short.xml -outfmt 5

@@ -3,11 +3,11 @@
 #
 # Usage, local:
 #
-#    ./3_create_short_database
+#    ./4_create_short_database
 #
 # Usage, Peregrine:
 #
-#    sbatch 3_create_short_database
+#    sbatch 4_create_short_database
 #
 #
 # Peregrine directives:
@@ -16,7 +16,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --mem=1G
-#SBATCH --job-name=3_create_short_database
-#SBATCH --output=3_create_short_database.log
+#SBATCH --job-name=4_create_short_database
+#SBATCH --output=4_create_short_database.log
 singularity exec singularity_example_10.sif \
   makeblastdb -in mycobacterium_short.faa -dbtype prot

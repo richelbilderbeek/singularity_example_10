@@ -3,11 +3,11 @@
 #
 # Usage, local:
 #
-#    ./1_download_mycobacterium_proteome
+#    ./2_download_mycobacterium_proteome
 #
 # Usage, Peregrine:
 #
-#    sbatch 1_download_mycobacterium_proteome
+#    sbatch 2_download_mycobacterium_proteome
 #
 #
 # Peregrine directives:
@@ -16,8 +16,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --mem=1G
-#SBATCH --job-name=1_download_mycobacterium_proteome
-#SBATCH --output=1_download_mycobacterium_proteome.log
+#SBATCH --job-name=2_download_mycobacterium_proteome
+#SBATCH --output=2_download_mycobacterium_proteome.log
 
 singularity exec singularity_example_10.sif \
   esearch -db assembly -query '("Mycobacterium"[Organism] OR mycobacterium[All Fields]) AND (latest[filter] AND "complete genome"[filter] AND all[filter] NOT anomalous[filter])' | elink -target nuccore -name assembly_nuccore_refseq | elink -target protein | efetch -db protein -format fasta > mycobacterium.faa 
