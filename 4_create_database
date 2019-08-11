@@ -1,0 +1,22 @@
+#!/bin/bash
+# Make a database based on the complete proteome
+#
+# Usage, local:
+#
+#    ./4_create_database
+#
+# Usage, Peregrine:
+#
+#    sbatch 4_create_database
+#
+#
+# Peregrine directives:
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks=1
+#SBATCH --mem=1G
+#SBATCH --job-name=4_create_database
+#SBATCH --output=4_create_database.log
+singularity exec singularity_example_10.sif \
+  makeblastdb -in mycobacterium.faa -dbtype prot
