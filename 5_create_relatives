@@ -1,0 +1,21 @@
+#!/bin/bash
+# Make a database based on the complete proteome
+#
+# Usage, local:
+#
+#    ./5_create_relatives
+#
+# Usage, Peregrine:
+#
+#    sbatch 5_create_relatives
+#
+#
+# Peregrine directives:
+#SBATCH --time=1:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks=1
+#SBATCH --mem=1G
+#SBATCH --job-name=5_create_relatives
+#SBATCH --output=5_create_relatives.log
+singularity exec singularity_example_10.sif blastp -query mycobacterium.faa -db mycobacterium.faa -out full_vs_full.xml -outfmt 5
