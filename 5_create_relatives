@@ -15,7 +15,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --mem=1G
+#SBATCH --mem=10G
 #SBATCH --job-name=5_create_relatives
 #SBATCH --output=5_create_relatives.log
 singularity exec singularity_example_10.sif blastp -query mycobacterium.faa -db mycobacterium.faa -out full_vs_full.xml -outfmt 5
